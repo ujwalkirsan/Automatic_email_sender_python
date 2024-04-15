@@ -5,20 +5,26 @@ Created on Sun Apr 14 10:56:42 2024
 @author: ujwal
 """
 
-#import os
+import os
 import smtplib
 from email.message import EmailMessage
 from email.utils import formataddr
+from pathlib import Path
+
+from dotenv import load_dotenv
 
 
 PORT = 587
-# I am currently using gmail so i have used outlook email server we can also use outlook or yahoo
-EMAIL_SERVER = "smtp.gmail.com"
+# I am currently using outlook so i have used outlook email server we can also use gmail or yahoo
+EMAIL_SERVER = "smtp-mail.outlook.com"
 
+current_dir = Path(__file__).resolve().parent if "__file__" in locals() else Path.cwd()
+envars = current_dir / ".env"
+load_dotenv(envars)
 
 # Read environment variables
-sender_email = "shekharkirsan@gmail.com"
-password_email = "xoahlxzgtfxwvucq"
+sender_email = os.getenv("EMAIL")   #"shekharkirsan@gmail.com"
+password_email = os.getenv("PASSWORD")   #"xoahlxzgtfxwvucq"
 def send_email(subject,receiver_email,name,percent,invoice_no,amount):
     # create the base text message.
     msg = EmailMessage()
