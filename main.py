@@ -7,7 +7,8 @@ Created on Sun Apr 14 14:42:29 2024
 
 import pandas as pd
 from send_email import send_email
-
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime
 
 
 SHEET_ID = "1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUtYWk"
@@ -38,12 +39,37 @@ def query_data_and_send_emails(df):
 
 
 
-df = load_df(URL)
+# manually sending mail
+"""df = load_df(URL)
 result = query_data_and_send_emails(df)
 print(result)
+"""
+
+# using schedule library
+def job_function():
+    print(f"Executing job_function at {datetime.now()}")
+    df = load_df(URL)
+    result = query_data_and_send_emails(df)
+    print(result)
+    print("Email sending completed........")
+    print("Press any key to countinue..")
+
+print("Scheduling started......")
+scheduler = BackgroundScheduler(timezone = 'Asia/Kolkata')
+
+scheduler.add_job(job_function,'cron',hour=16,minute=6)
+
+scheduler.start()
+
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("Scheduler stopped manually")    
 
 
 
+# BY Flask server
 """
 from flask import Flask
  
