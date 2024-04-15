@@ -8,6 +8,8 @@ Created on Sun Apr 14 14:42:29 2024
 import pandas as pd
 from send_email import send_email
 
+
+
 SHEET_ID = "1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUtYWk"
 SHEET_NAME = "Sheet1"
 URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}"
@@ -34,6 +36,15 @@ def query_data_and_send_emails(df):
             email_counter += 1
     return f"Total Emails Sent: {email_counter}"        
 
+
+
+df = load_df(URL)
+result = query_data_and_send_emails(df)
+print(result)
+
+
+
+"""
 from flask import Flask
  
 # Flask constructor takes the name of 
@@ -56,6 +67,4 @@ if __name__ == '__main__':
     # run() method of Flask class runs the application 
     # on the local development server.
     app.run()
-
-
-
+"""

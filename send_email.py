@@ -29,12 +29,13 @@ def send_email(subject,receiver_email,name,percent,invoice_no,amount):
     
     msg.set_content(
         f"""\
-        Hi {name},
-        I hope you are well.
-        I just wanted to drop you a quick note to remind you that out of 30 days you present only {amount} days in class and you have {percent}% of total 100% attendence .
-        I would be really grateful if you could contact me and give me a reason for your absent and from now onwords you have to come to class daily.
+        Dear {name},
+        We hope this email finds you well.
+        We just wanted to drop you a quick note to remind you that out of 30 days you present only {amount} days in class and you have {percent}% of total 100% attendence .
+        We would be really grateful if you could contact us and give us a reason for your absent and from now onwords you have to come to class daily.
         Otherwise you will have to face consequences
-        Best regards
+        Best regards,
+        Team MinTech
         Proffessor
         IIT Guwahati
             """
@@ -46,12 +47,13 @@ def send_email(subject,receiver_email,name,percent,invoice_no,amount):
         f"""\
     <html>
       <body>
-        <p>Hi {name},</p>
-        <p>I hope you are well.</p>
-        <p>I just wanted to drop you a quick note to remind you that out of 30 days of classes you present only in <strong> {amount} days </strong>  of class and you have  <strong>{percent}</strong> of total 100% attendence.</p>
-        <p> I would be really grateful if you could contact me and give a reason for your absent and from now onwards you  have to come to class daily.</p>
+        <p>Dear {name},</p>
+        <p>We hope this email finds you well.</p>
+        <p>We just wanted to drop you a quick note to remind you that out of 30 days of classes you present only in <strong> {amount} days </strong>  of class and you have  <strong>{percent}</strong> of total 100% attendence.</p>
+        <p>We would be really grateful if you could contact us and give us a reason for your absent and from now onwards you  have to come to class daily.</p>
         <p>Otherwise you will have to face consequences.</p>
-        <p>Best regards</p>
+        <p>Best regards,</p>
+        <p>Team MinTech</p>
         <p>Proffessor</p>
         <p>IIT Guwahati</p>
       </body>
@@ -68,7 +70,7 @@ def send_email(subject,receiver_email,name,percent,invoice_no,amount):
         
 if __name__ == "__main__":
     send_email(
-        subject = "Attendance Remainder",
+        subject = "Attendance Remainder: 220150026",
         name = "Ujwal Kirsan",
         receiver_email="ujwalkirsan2003@gmail.com",
         percent="90%",
