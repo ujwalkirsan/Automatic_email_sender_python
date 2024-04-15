@@ -18,6 +18,7 @@ PORT = 587
 # I am currently using outlook so i have used outlook email server we can also use gmail or yahoo
 EMAIL_SERVER = "smtp-mail.outlook.com"
 
+# Load environment variables
 current_dir = Path(__file__).resolve().parent if "__file__" in locals() else Path.cwd()
 envars = current_dir / ".env"
 load_dotenv(envars)
