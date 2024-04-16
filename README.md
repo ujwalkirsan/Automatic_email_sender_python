@@ -43,5 +43,35 @@ https://docs.google.com/spreadsheets/d/1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUt
 
 # 5. Usage
 
-1. You can run the main.py script manually for do so you have to comment out the schedule time code in the main.py script as you can see in this picture 
-![Reference Image]("/ss1.png")
+1. You can run the main.py script manually for do so you have to comment out the schedule time code in the main.py script as you can see in this below code:-
+`# manually sending mail
+
+df = load_df(URL)
+result = query_data_and_send_emails(df)
+print(result)
+
+# using schedule library (set time in which you want to send the mail)
+"""
+def job_function():
+    print(f"Executing job_function at {datetime.now()}")
+    df = load_df(URL)
+    result = query_data_and_send_emails(df)
+    print(result)
+    print("Email sending completed........")
+    print("Press any key to countinue..")
+
+print("Scheduling started......")
+scheduler = BackgroundScheduler(timezone = 'Asia/Kolkata')
+
+scheduler.add_job(job_function,'cron',hour=23,minute=6)
+
+scheduler.start()
+
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("Scheduler stopped manually")    
+
+"""`
+
