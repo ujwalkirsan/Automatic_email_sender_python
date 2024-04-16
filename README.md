@@ -30,3 +30,13 @@ with your email credentials.
 NOTE :- If you are using gmail.com as your email server then make a new app-specific password in app passwords in google accounts and then give any name to it and then it will show you a 16 digit alphabets password then you have to paste this password as the email password in your env file
 (for the above method you need to verify that your two factor authentication of the google is on otherwise the app password will not show you)
 link to app password :- https://accounts.google.com/v3/signin/challenge/pwd?TL=AEzbmxx-_vJrRHvDX_9gJcYIOdjDSNqm_ouMGFF-V_ZqNSNm82s-dK3opeU2dOJk&cid=2&continue=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&flowName=GlifWebSignIn&followup=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&ifkv=ARZ0qKLF45IQWgmvdZt3EQ-xIAEwO0Pr58My2H5tl3zfqL7fRLVal-salXWYanmi2RvEBFA3L-NNGg&osid=1&rart=ANgoxcdi_d-pr6T3OiSThx18wxtz0y3EkcU2niNlA2hQBhoBr_KcxWhAmukCIB8bmgDVI1l_B96gm2vYehgu2SIIOPIqW_6_Grf-bo6zfWXDzKtE1c73bwE&rpbg=1&service=accountsettings&theme=mn
+
+4. Configure Google Sheets access:
+
+Obtain the Google Sheets document ID (SHEET_ID) and sheet name (SHEET_NAME) that contains the data you want to use.
+Ensure the Google Sheets document is shared with the email address associated with the Google account you are using to access it.
+Here SHEET_ID is = "1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUtYWk"
+and SHEET_NAME is = "Sheet1"
+
+I have attach the link of the google sheets where you can see the students data.
+
