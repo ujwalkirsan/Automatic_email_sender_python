@@ -14,10 +14,10 @@ Access to a Google Sheets document with the required data
 # 4. Setup
 
 1. navigate the project directory:
-cd automated-email-reminder
+`cd automated-email-reminder`
 
 2. Install the required Python packages:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 3. Set up environments variables:
 Create a '.env' file in the project directory with the following variables:
