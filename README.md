@@ -22,8 +22,10 @@ Access to a Google Sheets document with the required data
 3. Set up environments variables:
 Create a '.env' file in the project directory with the following variables:
 ex:-
--`EMAIL=your_email@example.com`
--`PASSWORD=your_email_password`
+```.env
+EMAIL=your_email@example.com
+PASSWORD=your_email_password
+```
 Replace your_email@example.com and your_email_password
 with your email credentials.
 ```python
