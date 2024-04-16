@@ -44,4 +44,4 @@ https://docs.google.com/spreadsheets/d/1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUt
 # 5. Usage
 
 1. You can run the main.py script manually for do so you have to comment out the schedule time code in the main.py script as you can see in this picture 
-![Reference Image]("\C:\Users\ujwal\OneDrive\Pictures\Screenshots\Screenshot 2024-04-17 001821.png")
+![Reference Image]("/ss1.png")
