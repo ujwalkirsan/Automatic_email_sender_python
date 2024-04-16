@@ -26,19 +26,21 @@ load_dotenv(envars)
 # Read environment variables
 sender_email = os.getenv("EMAIL")   #"shekharkirsan@gmail.com"
 password_email = os.getenv("PASSWORD")   #"xoahlxzgtfxwvucq"
-def send_email(subject,receiver_email,name,percent,invoice_no,amount):
+def send_email(subject,receiver_email,name,percent,roll_no,classes,attachments=None):
     # create the base text message.
     msg = EmailMessage()
     msg["Subject"]=subject
-    msg["From"]=formataddr(("IIT Guwahati",f"{sender_email}"))
+    msg["From"]=formataddr(("DA213 Course IITG",f"{sender_email}"))
     msg["To"]=receiver_email
     msg["BCC"]=sender_email
     
+    
+
     msg.set_content(
         f"""\
         Dear {name},
         We hope this email finds you well.
-        We just wanted to drop you a quick note to remind you that out of 30 days you present only {amount} days in class and you have {percent}% of total 100% attendence .
+        We just wanted to drop you a quick note to remind you that out of 30 days you present only {classes} days in class and you have {percent}% of total 100% attendence .
         We would be really grateful if you could contact us and give us a reason for your absent and from now onwords you have to come to class daily.
         Otherwise you will have to face consequences
         Best regards,
@@ -47,16 +49,17 @@ def send_email(subject,receiver_email,name,percent,invoice_no,amount):
         IIT Guwahati
             """
         )
-        # Add the html version.  This converts the message into a multipart/alternative
+    # Add the html version.  This converts the message into a multipart/alternative
     # container, with the original text message as the first part and the new html
     # message as the second part.
     msg.add_alternative(
         f"""\
     <html>
       <body>
+        
         <p>Dear {name},</p>
         <p>We hope this email finds you well.</p>
-        <p>We just wanted to drop you a quick note to remind you that out of 30 days of classes you present only in <strong> {amount} days </strong>  of class and you have  <strong>{percent}</strong> of total 100% attendence.</p>
+        <p>We just wanted to drop you a quick note to remind you that out of 30 days of classes you present only in <strong> {classes} days </strong>  of class and you have  <strong>{percent}</strong> of total 100% attendence.</p>
         <p>We would be really grateful if you could contact us and give us a reason for your absent and from now onwards you  have to come to class daily.</p>
         <p>Otherwise you will have to face consequences.</p>
         <p>Best regards,</p>
@@ -68,7 +71,15 @@ def send_email(subject,receiver_email,name,percent,invoice_no,amount):
     """,
         subtype="html",
     )
-        
+
+    if attachments:
+        for attachment in attachments:
+            with open(attachment, "rb") as f:
+                file_data = f.read()
+                file_name = os.path.basename(attachment)
+            msg.add_attachment(file_data, maintype="application", subtype="octet-stream", filename=file_name)
+
+
     with smtplib.SMTP(EMAIL_SERVER,PORT) as server:
         server.starttls()
         server.login(sender_email,password_email)
@@ -80,8 +91,9 @@ if __name__ == "__main__":
         subject = "Attendance Remainder: 220150026",
         name = "Ujwal Kirsan",
         receiver_email="ujwalkirsan2003@gmail.com",
-        percent="90%",
-        invoice_no="220150026",
-        amount="27",
+        percent="40%",
+        roll_no="220150026",
+        classes="12",
+        attachments=["requirements.txt","IITG_logo.png"]
         
         )        

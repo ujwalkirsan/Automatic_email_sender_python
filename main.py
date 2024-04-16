@@ -31,21 +31,23 @@ def query_data_and_send_emails(df):
                 name = row["name"],
                 receiver_email=row["email"],
                 percent=row["percentage_of_attendance"],
-                invoice_no=row["Roll_No"],
-                amount=row["present_at_working_day"],
+                roll_no=row["Roll_No"],
+                classes=row["present_at_working_day"],
+                attachments=["text.txt","IITG_logo.png"]
                 )
             email_counter += 1
     return f"Total Emails Sent: {email_counter}"        
 
 
-
 # manually sending mail
-"""df = load_df(URL)
+
+df = load_df(URL)
 result = query_data_and_send_emails(df)
 print(result)
-"""
 
-# using schedule library
+
+# using schedule library (set time in which you want to send the mail)
+"""
 def job_function():
     print(f"Executing job_function at {datetime.now()}")
     df = load_df(URL)
@@ -57,7 +59,7 @@ def job_function():
 print("Scheduling started......")
 scheduler = BackgroundScheduler(timezone = 'Asia/Kolkata')
 
-scheduler.add_job(job_function,'cron',hour=16,minute=6)
+scheduler.add_job(job_function,'cron',hour=23,minute=6)
 
 scheduler.start()
 
@@ -67,30 +69,5 @@ try:
 except KeyboardInterrupt:
     print("Scheduler stopped manually")    
 
-
-
-# BY Flask server
 """
-from flask import Flask
- 
-# Flask constructor takes the name of 
-# current module (__name__) as argument.
-app = Flask(__name__)
- 
-# The route() function of the Flask class is a decorator, 
-# which tells the application which URL should call 
-# the associated function.
-@app.route('/')
-# ‘/’ URL is bound with hello_world() function.
-def hello_world():
-    df = load_df(URL)
-    result = query_data_and_send_emails(df)
-    return result
- 
-# main driver function
-if __name__ == '__main__':
- 
-    # run() method of Flask class runs the application 
-    # on the local development server.
-    app.run()
-"""
+
