@@ -1,11 +1,21 @@
-Required Libraries
+# install the following libraries 
 
-1) pandas  # import pandas as pd
-2) pyhton-dotenv # from dotenv import load_dotenv
-3) apscheduler # from apscheduler.schedulers.background import BackgroundScheduler
-4) datetime # from datetime import datetime
-5) os # import os
-6) smtplib # import smtplib
-7) email # from email.message import EmailMessage
-8) email.utils import formataddr # from email.utils import formataddr
-9) pathlib import Path # from pathlib import Path
+
+pandas  # import pandas as pd
+python-dotenv # from dotenv import load_dotenv
+APScheduler # from apscheduler.schedulers.background import BackgroundScheduler
+Datetime # from datetime import datetime
+python-email # from email.message import EmailMessage *and* # from email.utils import formataddr
+pathlib  # from pathlib import Path
+
+
+
+
+
+
+
+
+
+
+
+
