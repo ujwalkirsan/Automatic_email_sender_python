@@ -122,7 +122,7 @@ def job_function():
 print("Scheduling started......")
 scheduler = BackgroundScheduler(timezone = 'Asia/Kolkata')
 
-scheduler.add_job(job_function,'cron',hour=23,minute=6)
+scheduler.add_job(job_function,'cron',hour=23,minute=6) # change this time for your scheduling
 
 scheduler.start()
 
