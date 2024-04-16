@@ -45,6 +45,7 @@ https://docs.google.com/spreadsheets/d/1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUt
 
 1. If you want to only test the code then in send_email.py you have to write your_email_address@email.com
 change the folloeing code in send_email.py accordingly.
+```python
 if __name__ == "__main__":
     send_email(
         subject = "Attendance Remainder: 220150026", # your roll no
@@ -56,9 +57,9 @@ if __name__ == "__main__":
         attachments=["requirements.txt","IITG_logo.png"] # attachments
         
         )  
-
+```
 2. You can run the main.py script manually for do so you have to comment out the schedule time code in the main.py script as you can see in this below code:
-
+```python
 `# manually sending mail
 
 df = load_df(URL)
@@ -90,8 +91,10 @@ except KeyboardInterrupt:
     print("Scheduler stopped manually")    
 
 """
+```
 
 3. You can run the main.py script at a schedule time to do so you have to comment out the manually method code in the main.py script as you can see in this below code:
+```python
 `# manually sending mail
 `# comment this code
 """
@@ -123,7 +126,7 @@ try:
 except KeyboardInterrupt:
     print("Scheduler stopped manually")    
 
-
+```
 # 6. Customization
 
 You can customize the following aspects of the script:
