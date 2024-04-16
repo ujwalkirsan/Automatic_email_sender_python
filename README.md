@@ -38,5 +38,10 @@ Ensure the Google Sheets document is shared with the email address associated wi
 Here SHEET_ID is = "1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUtYWk"
 and SHEET_NAME is = "Sheet1"
 
-I have attach the link of the google sheets where you can see the students data.
+I have attach the link of the google sheets where you can see the students data :-
+https://docs.google.com/spreadsheets/d/1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUtYWk/edit#gid=0
 
+# 5. Usage
+
+1. You can run the main.py script manually for do so you have to comment out the schedule time code in the main.py script as you can see in this picture 
+![Reference Image]("\C:\Users\ujwal\OneDrive\Pictures\Screenshots\Screenshot 2024-04-17 001821.png")
