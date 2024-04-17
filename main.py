@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 14 14:42:29 2024
-
-@author: ujwal
-"""
 
 import pandas as pd
 from send_email import send_email

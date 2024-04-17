@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 14 10:56:42 2024
 
-@author: ujwal
-"""
 
 import os
 import smtplib
@@ -17,15 +12,15 @@ from dotenv import load_dotenv
 PORT = 587
 # I am currently using outlook so i have used outlook email server we can also use gmail or yahoo
 EMAIL_SERVER = "smtp-mail.outlook.com"
-
+# EMAIL_SERVER = "smtp.gmail.com"  # if you are using google then use this and comment upper email_server
 # Load environment variables
 current_dir = Path(__file__).resolve().parent if "__file__" in locals() else Path.cwd()
 envars = current_dir / ".env"
 load_dotenv(envars)
 
 # Read environment variables
-sender_email = os.getenv("EMAIL")   #"shekharkirsan@gmail.com"
-password_email = os.getenv("PASSWORD")   #"xoahlxzgtfxwvucq"
+sender_email = os.getenv("EMAIL")   
+password_email = os.getenv("PASSWORD")   
 def send_email(subject,receiver_email,name,percent,roll_no,classes,attachments=None):
     # create the base text message.
     msg = EmailMessage()
