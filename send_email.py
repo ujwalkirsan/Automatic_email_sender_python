@@ -19,8 +19,8 @@ envars = current_dir / ".env"
 load_dotenv(envars)
 
 # Read environment variables
-sender_email = os.getenv("EMAIL")   
-password_email = os.getenv("PASSWORD")   
+sender_email = os.getenv("EMAIL")   # in case your env file not working then write your email and Password directly
+password_email = os.getenv("PASSWORD")   # sender_email = "your_email@gmail.com" and password_email = "your_email_password" if you are using gmail server then use 16 digit alpha password as  I mentioned in the README file how to get the 16 digit password for your email account
 def send_email(subject,receiver_email,name,percent,roll_no,classes,attachments=None):
     # create the base text message.
     msg = EmailMessage()
@@ -80,12 +80,13 @@ def send_email(subject,receiver_email,name,percent,roll_no,classes,attachments=N
         server.login(sender_email,password_email)
         server.sendmail(sender_email,receiver_email,msg.as_string())
         print("Mail Send Successfully!!!!")
-        
+
+   # this is text case you change it and add your another email id to get the mail at account     
 if __name__ == "__main__":
     send_email(
         subject = "Attendance Remainder: 220150026",
         name = "Ujwal Kirsan",
-        receiver_email="ujwalkirsan2003@gmail.com",
+        receiver_email="ujwalkirsan2003@gmail.com", 
         percent="40%",
         roll_no="220150026",
         classes="12",

@@ -14,13 +14,13 @@ Access to a Google Sheets document with the required data
 # 4. Setup
 
 1. navigate the project directory:
-`cd automated-email-reminder`
+`cd automated_email_reminder`
 
 2. Install the required Python packages:
 `pip install -r requirements.txt`
 
 3. Set up environments variables:
-Create a '.env' file in the project directory with the following variables:
+Create a '.env' file in the project directory and insert the following variables:
 ex:-
 ```.env
 EMAIL=your_email@example.com
@@ -29,13 +29,13 @@ PASSWORD=your_email_password
 Replace your_email@example.com and your_email_password
 with your email credentials.
 ```python
-#you havw to change this also
+#you have to change this also in send_mail.py file
 # EMAIL_SERVER = "smtp-mail.outlook.com" # for outlook server
 EMAIL_SERVER = "smtp.gmail.com" # for gmail server
 ```
 NOTE :- If you are using gmail.com as your email server then make a new app-specific password in app passwords in google accounts and then give any name to it and then it will show you a 16 digit alphabets password then you have to paste this password as the email password in your env file
-(for the above method you need to verify that your two factor authentication of the google is on otherwise the app password will not show you)
-link to app password :- https://accounts.google.com/v3/signin/challenge/pwd?TL=AEzbmxx-_vJrRHvDX_9gJcYIOdjDSNqm_ouMGFF-V_ZqNSNm82s-dK3opeU2dOJk&cid=2&continue=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&flowName=GlifWebSignIn&followup=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&ifkv=ARZ0qKLF45IQWgmvdZt3EQ-xIAEwO0Pr58My2H5tl3zfqL7fRLVal-salXWYanmi2RvEBFA3L-NNGg&osid=1&rart=ANgoxcdi_d-pr6T3OiSThx18wxtz0y3EkcU2niNlA2hQBhoBr_KcxWhAmukCIB8bmgDVI1l_B96gm2vYehgu2SIIOPIqW_6_Grf-bo6zfWXDzKtE1c73bwE&rpbg=1&service=accountsettings&theme=mn
+(for the above method you need to verify that your two factor authentication of the google is on otherwise the app password will not show to you)
+link for creating app password :- https://accounts.google.com/v3/signin/challenge/pwd?TL=AEzbmxx-_vJrRHvDX_9gJcYIOdjDSNqm_ouMGFF-V_ZqNSNm82s-dK3opeU2dOJk&cid=2&continue=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&flowName=GlifWebSignIn&followup=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&ifkv=ARZ0qKLF45IQWgmvdZt3EQ-xIAEwO0Pr58My2H5tl3zfqL7fRLVal-salXWYanmi2RvEBFA3L-NNGg&osid=1&rart=ANgoxcdi_d-pr6T3OiSThx18wxtz0y3EkcU2niNlA2hQBhoBr_KcxWhAmukCIB8bmgDVI1l_B96gm2vYehgu2SIIOPIqW_6_Grf-bo6zfWXDzKtE1c73bwE&rpbg=1&service=accountsettings&theme=mn
 
 4. Configure Google Sheets access:
 
@@ -50,7 +50,7 @@ https://docs.google.com/spreadsheets/d/1XuHmlXTpq9KpIUguHRbYyTVS342Zer9SkVHXmtUt
 # 5. Usage
 
 1. If you want to only test the code then in send_email.py you have to write your_email_address@email.com
-change the folloeing code in send_email.py accordingly.
+change the following code in send_email.py accordingly.
 ```python
 if __name__ == "__main__":
     send_email(
